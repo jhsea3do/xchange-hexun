@@ -10,23 +10,23 @@ import org.knowm.xchange.service.marketdata.MarketDataService;
 
 public class HexunExchangeTest {
 
-	HexunExchange exchange;
+  HexunExchange exchange;
 
-	HexunApi hexunApi;
+  HexunApi hexunApi;
 
-	@Before
-	public void setUp() {
-		exchange = ExchangeFactory.INSTANCE.createExchange(HexunExchange.class);
-	}
+  @Before
+  public void setUp() {
+    exchange = ExchangeFactory.INSTANCE.createExchange(HexunExchange.class);
+  }
 
-	@After
-	public void tearDown() {
-		exchange = null;
-	}
+  @After
+  public void tearDown() {
+    exchange = null;
+  }
 
-	@Test
-	public void testMarketDataService() {
-		MarketDataService marketDataService = exchange.getMarketDataService();
-		assertNotNull(marketDataService);
-	}
+  @Test
+  public void testMarketDataService() {
+    MarketDataService marketDataService = exchange.getMarketDataService();
+    assertNotNull(marketDataService);
+  }
 }

@@ -11,5 +11,4 @@ public class HexunBaseService extends BaseExchangeService implements BaseService
   public HexunBaseService(Exchange exchange) {
     super(exchange);
   }
-  
 }
