@@ -27,15 +27,15 @@ public class HexunMarketDataService extends HexunMarketDataServiceRaw implements
   @Override
   public Ticker getTicker(CurrencyPair currencyPair, Object... args) throws IOException {
 
-    HexunRate rates = getHexunTicker(currencyPair);
+    HexunRate rate = getHexunTicker(currencyPair);
 
     // Adapt to XChange DTOs
     return HexunAdapters.adaptTicker(
         currencyPair,
-        rates.getPrice(),
-        rates.getBidPrice(),
-        rates.getAskPrice(),
-        new Date(rates.getDatetime()));
+        rate.getPrice(),
+        rate.getBidPrice(),
+        rate.getAskPrice(),
+        new Date(rate.getDatetime()));
   }
 
   @Override

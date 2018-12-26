@@ -19,9 +19,9 @@ import si.mazi.rescu.RestProxyFactory;
 
 public class HexunMarketDataServiceRaw extends HexunBaseService {
 
-  private HexunApi hexunApi;
+  private final HexunApi hexunApi;
 
-  private HexunProfile hexunProfile;
+  private final HexunProfile hexunProfile;
 
   /**
    * Constructor
@@ -37,14 +37,6 @@ public class HexunMarketDataServiceRaw extends HexunBaseService {
             exchange.getExchangeSpecification().getPlainTextUri(),
             getClientConfig());
     this.hexunProfile = new HexunDefaultProfile();
-  }
-
-  public void setHexunApi(HexunApi hexunApi) {
-    this.hexunApi = hexunApi;
-  }
-
-  public void setHexunProfile(HexunProfile hexunProfile) {
-    this.hexunProfile = hexunProfile;
   }
 
   public HexunRate getHexunTicker(CurrencyPair pair) throws IOException {
